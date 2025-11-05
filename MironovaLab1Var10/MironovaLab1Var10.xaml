@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MironovaLab1Var10.MironovaLab1Var10"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Spacing="50" VerticalOptions="Center">
+
+        <Label x:Name="label1"
+               Text="Міронова Алла&#10;Лабораторна робота №1&#10;Варіант 10"
+               FontSize="18"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               Margin="30,0,0,0" />
+
+        <Label x:Name="label2"
+               Text="Ласкаво просимо до ОНМУ!"
+               FontSize="34"
+               TextColor="LightBlue"
+               BackgroundColor="Yellow"
+               HorizontalOptions="Start"
+               Margin="28,0,0,0" />
+
+        <VerticalStackLayout Spacing="50">
+
+            <Button x:Name="button1"
+                    Text="Змінити"
+                    FontSize="20"
+                    TextColor="Black"
+                    BorderColor="Cyan"
+                    BorderWidth="2"
+                    HorizontalOptions="Start"
+                    Margin="42,0,0,0"
+                    WidthRequest="160"
+                    Clicked="Button1_Clicked" />
+
+            <Button x:Name="button2"
+                    Text="Число Амстронга ="
+                    FontSize="20"
+                    TextColor="Yellow"
+                    BackgroundColor="Blue"
+                    BorderColor="Red"
+                    BorderWidth="2"
+                    HorizontalOptions="EndAndExpand"
+                    Margin="0,0,35,0"
+                    WidthRequest="350"
+                    Clicked="Button2_Clicked" />
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
