@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MironovaLab2Var14.MainPage"
+             Title="Євгеній Онєгін"
+             BackgroundColor="White">
+
+    <ScrollView x:Name="MainScroll">
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Євгеній Онєгін"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="DarkBlue" />
+
+            <Label FontSize="18"
+                   LineBreakMode="WordWrap"
+                   TextColor="Black">
+                <Label.Text>
+                    <![CDATA[
+Мій дядько найчесніших правил,
+Коли не жартома занедужав,
+Він поважати себе змусив
+І краще вигадати не міг.
+
+Його приклад іншим наука;
+Але, боже мій, яка нудьга
+З хворим сидіти і день і ніч,
+Не відходячи ні кроку геть!
+Яка низька підступність
+Напівживого бавити,
+Йому подушки поправляти,
+Сумно підносити ліки,
+Зітхати і думати про себе:
+«Коли ж чорт візьме тебе!»
+
+Так думав молодий гульвіса,
+Летячи в пилу на поштових,
+Всевишньою волею Зевеса
+Спадкоємець усіх своїх рідних.
+                    ]]>
+                </Label.Text>
+            </Label>
+
+            <Button Text="На початок"
+                    FontSize="18"
+                    BackgroundColor="LightBlue"
+                    TextColor="Black"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
