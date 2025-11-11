@@ -1,0 +1,152 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MironovaLab3Var14.MironovaLab3Var14"
+             BackgroundColor="White"
+             Title="Конвертор об'єму">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="30">
+
+            <!-- Мітка 1: інформація про студента -->
+            <Label x:Name="label1"
+                   Text="Міронова Алла — Лабораторна робота №3 — Варіант №14"
+                   FontSize="16"
+                   TextColor="Black"
+                   HorizontalOptions="Start"
+                   Margin="0,0,0,0"/>
+
+            <!-- Мітка 2: інформація про конвертор -->
+            <Label x:Name="label2"
+                   Text="Конвертор об’єму між різними одиницями вимірювання"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="DarkBlue"
+                   HorizontalOptions="Center" />
+
+            <!-- Поле введення значення -->
+            <Entry x:Name="inputEntry"
+                   Placeholder="Введіть об’єм"
+                   Keyboard="Numeric"
+                   TextChanged="OnTextChanged"
+                   BackgroundColor="White"
+                   TextColor="Black" />
+
+            <!-- Група 1: З якої одиниці -->
+            <Label Text="З одиниці:" TextColor="Black" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <VerticalStackLayout x:Name="fromGroup">
+                <RadioButton Value="liter" GroupName="fromGroup" IsChecked="True">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="liter.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Літри" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="ml" GroupName="fromGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="ml.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Мілілітри" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="m3" GroupName="fromGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="m3.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Кубічні метри" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="gallon" GroupName="fromGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="gallon.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Галони" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="pint" GroupName="fromGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="pint.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Пінти" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+            </VerticalStackLayout>
+
+            <!-- Група 2: В яку одиницю -->
+            <Label Text="В одиницю:" TextColor="Black" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <VerticalStackLayout x:Name="toGroup">
+                <RadioButton Value="liter" GroupName="toGroup" IsChecked="True">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="liter.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Літри" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="ml" GroupName="toGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="ml.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Мілілітри" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="m3" GroupName="toGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="m3.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Кубічні метри" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="gallon" GroupName="toGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="gallon.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Галони" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton Value="pint" GroupName="toGroup">
+                    <RadioButton.Content>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="pint.png" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Пінти" TextColor="Black" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+            </VerticalStackLayout>
+
+
+            <!-- Кнопка конвертації -->
+            <Button x:Name="convertButton"
+                    Text="Перетворити"
+                    BackgroundColor="Magenta"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    IsEnabled="False"
+                    Clicked="OnConvertClicked" />
+
+            <!-- Результат -->
+            <Entry x:Name="resultEntry"
+                   Placeholder="Результат"
+                   IsReadOnly="True"
+                   BackgroundColor="White"
+                   TextColor="DarkGreen" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
