@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MironovaLab5Var14.MironovaLab5Var14"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Lab 5">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+
+        <Label Text="Додавання викладача" FontSize="20" HorizontalOptions="Center"/>
+
+        <Entry x:Name="LastNameEntry" Placeholder="Прізвище"/>
+        <Entry x:Name="FirstNameEntry" Placeholder="Ім'я"/>
+        <Entry x:Name="MiddleNameEntry" Placeholder="По батькові"/>
+
+        <Entry x:Name="BirthDateEntry"
+               Placeholder="Дата народження (рррр-мм-дд)"
+               Keyboard="Numeric" />
+
+        <Entry x:Name="AcademicTitleEntry"
+               Placeholder="Вчене звання" />
+
+        <Button Text="Додати викладача" Clicked="AddTeacher_Clicked" />
+
+        <Entry x:Name="DeleteEntry"
+               Placeholder="Прізвище для видалення" />
+
+        <Button Text="Видалити викладача" Clicked="DeleteTeacher_Clicked" />
+
+        <Label Text="Список викладачів:" FontSize="18" Margin="0,20,0,0"/>
+
+        <CollectionView x:Name="TeachersListView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="DarkBlue" Padding="8" Margin="0,5" CornerRadius="8">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding FullName}" FontAttributes="Bold"/>
+                            <Label Text="{Binding AcademicTitle}" />
+                            <Label Text="{Binding BirthDateFormatted}" />
+                            <Label Text="{Binding AgeFormatted}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
