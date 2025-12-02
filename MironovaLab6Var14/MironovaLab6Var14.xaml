@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MironovaLab6Var14.MironovaLab6Var14"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Мови програмування">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Label Text="Додавання мови програмування" 
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+
+            <Entry x:Name="NameEntry" Placeholder="Назва мови"/>
+            <Entry x:Name="CompanyEntry" Placeholder="Компанія розробник"/>
+            <Entry x:Name="ReleaseDateEntry" Placeholder="Дата релізу (рррр-мм-дд)" Keyboard="Numeric"/>
+
+            <Button Text="Додати" Clicked="AddLang_Clicked"/>
+
+            <Entry x:Name="EditNameEntry" Placeholder="Назва для редагування"/>
+            <Button Text="Редагувати" Clicked="EditLang_Clicked"/>
+
+            <Entry x:Name="DeleteEntry" Placeholder="Назва для видалення"/>
+            <Button Text="Видалити" Clicked="DeleteLang_Clicked"/>
+
+            <Label Text="Список мов:" FontSize="18" Margin="0,20,0,0"/>
+
+            <CollectionView x:Name="LanguagesListView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="DarkBlue" Padding="10" Margin="0,5" CornerRadius="8">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Company}"/>
+                                <Label Text="{Binding ReleaseDateFormatted}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="2023 рік" HorizontalOptions="Center" Margin="0,30,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
