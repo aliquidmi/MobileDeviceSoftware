@@ -1,15 +1,16 @@
-﻿namespace MironovaLab6Var14
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿using MironovaLab6Var14.Views;
 
-        protected override Window CreateWindow(IActivationState activationState)
-        {
-            return new Window(new MironovaLab6Var14());
-        }
+namespace MironovaLab6Var14;
+
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+    }
+
+    protected override Window CreateWindow(IActivationState activationState)
+    {
+        return new Window(new MironovaLab6Var14.Views.MironovaPage1());
     }
 }
