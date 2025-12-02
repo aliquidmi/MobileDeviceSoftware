@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MironovaLab4Var14", "MironovaLab4Var14\MironovaLab4Var14.csproj", "{FC0604A7-EEE8-4842-8D22-BA5BA291F086}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC0604A7-EEE8-4842-8D22-BA5BA291F086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0604A7-EEE8-4842-8D22-BA5BA291F086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0604A7-EEE8-4842-8D22-BA5BA291F086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0604A7-EEE8-4842-8D22-BA5BA291F086}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {182903E0-0283-4E04-A073-6A4D5E472881}
+	EndGlobalSection
+EndGlobal
