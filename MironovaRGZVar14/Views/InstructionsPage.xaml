@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MironovaRGZVar14.Views.InstructionsPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            
+            <Label Text="Як користуватися калькулятором:"
+                   FontSize="22"
+                   TextColor="Red"
+                   FontAttributes="Bold"/>
+
+            <Label Text="• Щоб ввести число — натискайте кнопки з цифрами."
+                   FontSize="18"/>
+
+            <Label Text="• Щоб виконати дію (+, –, ×, ÷) — натисніть потрібну операцію."
+                   FontSize="18"/>
+
+            <Label Text="• Для обчислення кореня – натисніть кнопку √."
+                   FontSize="18"/>
+
+            <Label Text="• Щоб видалити останню цифру — натисніть кнопку CE."
+                   FontSize="18"/>
+
+            <Label Text="• Щоб очистити весь ввід — натисніть кнопку C."
+                   FontSize="18"/>
+
+            <Label Text="• Щоб отримати результат — натисніть кнопку '='."
+                   FontSize="18"/>
+
+            <Label Text="• Кнопки мають кольорову індикацію:"
+                   FontSize="18"/>
+
+            <Label Text="    – Сині кнопки з жовтим текстом → звичайні цифри та операції."
+                   FontSize="18"/>
+
+            <Label Text="    – Червоні кнопки з чорним текстом → C та CE."
+                   FontSize="18"/>
+
+            <Label Text="    – При натисканні сині кнопки змінюють фон на червоний."
+                   FontSize="18"/>
+
+            <Label Text="Калькулятор працює за принципом простих двооперандних обчислень: спочатку вводиться перше число, потім операція, потім друге число та кнопка '='."
+                   FontSize="18"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

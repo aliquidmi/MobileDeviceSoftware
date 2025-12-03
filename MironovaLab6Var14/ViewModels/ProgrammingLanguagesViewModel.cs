@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using MironovaLab6Var14.Models;
-using Microsoft.Maui.Controls; // для Command
+using Microsoft.Maui.Controls; 
 
 namespace MironovaLab6Var14.ViewModels;
 
@@ -25,7 +25,6 @@ public class ProgrammingLanguagesViewModel : INotifyPropertyChanged
             if (_selectedLanguage == value) return;
             _selectedLanguage = value;
             OnPropertyChanged();
-            // При виборі заповнюємо поля для редагування
             if (_selectedLanguage != null)
             {
                 NewName = _selectedLanguage.Name;
@@ -34,13 +33,11 @@ public class ProgrammingLanguagesViewModel : INotifyPropertyChanged
             }
             else
             {
-                // очистити поля, якщо нічого не вибрано (опційно)
                 NewName = string.Empty;
                 NewCompany = string.Empty;
                 NewDate = DateTime.Now;
             }
 
-            // Оновлюємо доступність команд
             ((Command)EditCommand).ChangeCanExecute();
             ((Command)DeleteCommand).ChangeCanExecute();
         }
@@ -92,7 +89,6 @@ public class ProgrammingLanguagesViewModel : INotifyPropertyChanged
 
         Languages.Add(pl);
 
-        // очистити поля після додавання
         NewName = string.Empty;
         NewCompany = string.Empty;
         NewDate = DateTime.Now;
@@ -102,13 +98,9 @@ public class ProgrammingLanguagesViewModel : INotifyPropertyChanged
     {
         if (SelectedLanguage == null) return;
 
-        // Оновлюємо властивості моделі — вони піднімуть PropertyChanged і UI оновиться
         SelectedLanguage.Name = NewName;
         SelectedLanguage.Company = NewCompany;
         SelectedLanguage.ReleaseDate = NewDate;
-
-        // опціонально — зняти виділення
-        // SelectedLanguage = null;
     }
 
     void DeleteLanguage()
@@ -116,7 +108,7 @@ public class ProgrammingLanguagesViewModel : INotifyPropertyChanged
         if (SelectedLanguage == null) return;
 
         Languages.Remove(SelectedLanguage);
-        SelectedLanguage = null; // очистити вибір і поля
+        SelectedLanguage = null; 
     }
 
     #region INotifyPropertyChanged

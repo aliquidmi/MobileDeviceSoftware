@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MironovaRGZVar14.Views.AuthorPage">
+
+    <Grid Padding="20">
+
+        <!-- Нижній лівий текст -->
+        <VerticalStackLayout VerticalOptions="End"
+                             HorizontalOptions="Start">
+
+            <Label Text="Роботу виконала:"
+                   FontSize="24" />
+
+            <Label Text="Студентка групи КН 42"
+                   FontSize="24" />
+
+            <Label Text="Міронова Алла"
+                   FontSize="24" />
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

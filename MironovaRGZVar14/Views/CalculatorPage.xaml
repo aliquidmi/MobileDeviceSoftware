@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MironovaRGZVar14.ViewModels"
+    x:Class="MironovaRGZVar14.Views.CalculatorPage">
+
+    <ContentPage.Resources>
+
+        <!-- Стиль для всіх звичайних кнопок (жовтий текст, синій фон) -->
+        <Style TargetType="Button" x:Key="BlueButton">
+            <Setter Property="TextColor" Value="Yellow" />
+            <Setter Property="BackgroundColor" Value="Blue" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="8,0,0,12"/>
+
+            <!-- Pressed → Red -->
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Blue"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для C та CE (чорний текст, червоний фон, фон НЕ змінюється при натисканні) -->
+        <Style TargetType="Button" x:Key="RedFixedButton">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="Red" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="8,0,0,12"/>
+
+            <!-- Pressed → той самий червоний -->
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    <ContentPage.BindingContext>
+        <vm:CalculatorViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" VerticalOptions="End">
+
+        <Label Text="{Binding Display}"
+               FontSize="48"
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               TextColor="White"/>
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+              ColumnDefinitions="*,*,*,*"
+              Margin="0,20,0,0">
+
+            <!-- C (red) -->
+            <Button Style="{StaticResource RedFixedButton}" Grid.Row="0" Grid.Column="0"
+                    Text="C" Command="{Binding ClearCommand}" />
+
+            <!-- CE (red) -->
+            <Button Style="{StaticResource RedFixedButton}" Grid.Row="0" Grid.Column="1"
+                    Text="CE" Command="{Binding RemoveLastCommand}" />
+
+            <!-- √ -->
+            <Button Style="{StaticResource BlueButton}" Grid.Row="0" Grid.Column="2"
+                    Text="√" Command="{Binding OperationCommand}" CommandParameter="√"/>
+
+            <!-- / -->
+            <Button Style="{StaticResource BlueButton}" Grid.Row="0" Grid.Column="3"
+                    Text="/" Command="{Binding OperationCommand}" CommandParameter="/"/>
+
+            <!-- 7 8 9 * -->
+            <Button Style="{StaticResource BlueButton}" Grid.Row="1" Grid.Column="0"
+                    Text="7" Command="{Binding AddDigitCommand}" CommandParameter="7"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="1" Grid.Column="1"
+                    Text="8" Command="{Binding AddDigitCommand}" CommandParameter="8"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="1" Grid.Column="2"
+                    Text="9" Command="{Binding AddDigitCommand}" CommandParameter="9"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="1" Grid.Column="3"
+                    Text="*" Command="{Binding OperationCommand}" CommandParameter="*"/>
+
+            <!-- 4 5 6 - -->
+            <Button Style="{StaticResource BlueButton}" Grid.Row="2" Grid.Column="0"
+                    Text="4" Command="{Binding AddDigitCommand}" CommandParameter="4"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="2" Grid.Column="1"
+                    Text="5" Command="{Binding AddDigitCommand}" CommandParameter="5"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="2" Grid.Column="2"
+                    Text="6" Command="{Binding AddDigitCommand}" CommandParameter="6"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="2" Grid.Column="3"
+                    Text="-" Command="{Binding OperationCommand}" CommandParameter="-"/>
+
+            <!-- 1 2 3 + -->
+            <Button Style="{StaticResource BlueButton}" Grid.Row="3" Grid.Column="0"
+                    Text="1" Command="{Binding AddDigitCommand}" CommandParameter="1"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="3" Grid.Column="1"
+                    Text="2" Command="{Binding AddDigitCommand}" CommandParameter="2"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="3" Grid.Column="2"
+                    Text="3" Command="{Binding AddDigitCommand}" CommandParameter="3"/>
+            <Button Style="{StaticResource BlueButton}" Grid.Row="3" Grid.Column="3"
+                    Text="+" Command="{Binding OperationCommand}" CommandParameter="+"/>
+
+            <!-- 0 та = -->
+            <Button Style="{StaticResource BlueButton}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                    Text="0" Command="{Binding AddDigitCommand}" CommandParameter="0"/>
+
+            <Button Style="{StaticResource BlueButton}" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"
+                    Text="=" Command="{Binding ResultCommand}" />
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
